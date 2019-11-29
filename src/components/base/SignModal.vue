@@ -238,9 +238,6 @@ export default {
       }
     },
     async getCaptcha() {
-      
-      console.log("TEST");
-
       await this.$axios.get("api/captcha/nkey").then(ret => {
         this.captchaKey = ret.data.key;
       });
@@ -249,13 +246,11 @@ export default {
         params: { key: this.captchaKey }
       });
     },
-
     async compareKey() {
 
       await this.$axios.get("api/captcha/result", {
         params: { key: this.captchaKey, value: this.captchaCode }
       }).then((ret) => {
-
         this.captchaFlag = ret.data.result;
       });
     }

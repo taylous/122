@@ -7,7 +7,7 @@ const state = {
           imgUrl: "hojin.jpg",
   
           id: "ryuhojin",
-          token: "y4eoDG8jQ29sSs9_mpF2",
+          token: "GITLAB_ACCESS_TOKEN",
           color: "pink",
 
           skill: {
@@ -28,7 +28,7 @@ const state = {
           imgUrl: "yeonju.jpg",
   
           id: "Eomazing",
-          token: "phLEf4A8LuBfkhsotEwg",
+          token: "GITLAB_ACCESS_TOKEN",
           color: "purple",
 
           skill: {
@@ -49,7 +49,7 @@ const state = {
           imgUrl: "seokwon.jpg",
   
           id: "blackmonkey9256",
-          token: "HdXsmvT6hBR-mFJyN_YP",
+          token: "GITLAB_ACCESS_TOKEN",
           color: "#429f9e",
 
           skill: {
@@ -70,7 +70,7 @@ const state = {
           imgUrl: "changyoon.jpg",
   
           id: "Taylous",
-          token: "zAw5-XwKyMhRkQJuQ4fQ",
+          token: "GITLAB_ACCESS_TOKEN",
           color: "blue",
 
           skill: {
@@ -91,7 +91,7 @@ const state = {
           imgUrl: "hyeonjin.jpg",
   
           id: "hyeonjin23",
-          token: "kWsKbLKaDydDKBgguZnL",
+          token: "GITLAB_ACCESS_TOKEN",
           color: "black",
 
           skill: {

@@ -1,6 +1,6 @@
 
 const state = {
-  token: 'a4eef47da13c83137b8263754b5cbd89d2bee652'
+  token: 'INPUT_FIREBASE_AUTH_TOKEN_FOR_PWA'
 };
 
 const getters = {

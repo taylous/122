@@ -1,8 +1,8 @@
 // 네이버 캡차 API 예제 - 키발급
 var express = require('express');
 var app = express.Router();
-var client_id = 'g6QamGJQjl_AbO9jwcpL';
-var client_secret = 'sjo5yYUSkx';
+var client_id = 'INPUT_YOUR_ID';
+var client_secret = 'INPUT_YOUR_SECRET';
 var fs = require('fs');
 
 app.get('/captcha/nkey', function (req, res) {
