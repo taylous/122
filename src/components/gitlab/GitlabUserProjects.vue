@@ -1,7 +1,5 @@
 <template>
-  <!-- </v-layout> -->
   <v-container fluid>
-    <!-- About Me -->
     <v-layout justify row wrap>
       <v-flex xs12>
         <h2 class="headline my-5 text-xs-center font-weight-bold">About Team</h2>
@@ -131,7 +129,7 @@
 </template>
 
 <script>
-import {mapState} from 'vuex';
+import { mapState } from 'vuex';
 
 const BASE_URL = "https://lab.ssafy.com/api/v4";
 
@@ -169,7 +167,6 @@ export default {
         this.memberData[index].token,
         this.memberData[index].color
       ).then(data => {
-        console.log(data);
         this.datas = data;
       });
       this.gitDialog = true;

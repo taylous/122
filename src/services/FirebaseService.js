@@ -16,13 +16,13 @@ const COMMENTS = 'comments';
 
 // Setup Firebase
 const config = {
-	apiKey: "AIzaSyD4WyDVLvJV1ZXAH2KOUQDs2JFtQjqv3Do",
+	apiKey: "INPUT_FIREBASE_API_KEY",
 	authDomain: "ssafy-web-pjt.firebaseapp.com",
 	databaseURL: "https://ssafy-web-pjt.firebaseio.com",
 	projectId: "ssafy-web-pjt",
 	storageBucket: "ssafy-web-pjt.appspot.com",
-	messagingSenderId: "363817638878",
-	appId: "1:363817638878:web:aea49aa578e86b59"
+	messagingSenderId: "INPUT_MESSAGE_SENDER_ID",
+	appId: "INPUT_APP_ID"
 }
 
 firebase.initializeApp(config)

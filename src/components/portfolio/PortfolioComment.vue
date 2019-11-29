@@ -125,8 +125,6 @@ export default {
   },
   methods: {
     async loadComments() {
-      
-      console.log("ID?? ", this.articleId);
 
       let comments = await FirebaseService.getComments(this.articleId);
       this.loadMore = true;
@@ -154,8 +152,6 @@ export default {
       } else {
         this.totalPage = 1;
       }
-
-      console.log("LOAD ", this.replies);
     },
 
     authorizationCheck(index) {
@@ -191,7 +187,6 @@ export default {
     addComment() {
       if (this.user.loggedIn == false || this.user.uid == undefined) {
 
-        console.dir(this.$parent);
         this.$parent.$options.parent.setModalContent("알림", "로그인을 해주시길 바랍니다.");
         return;
       }
@@ -200,8 +195,6 @@ export default {
 
       FirebaseService.addComment(comment);
       this.loadComments();
-
-      console.log("AFTER ADD :", this.replies);
       this.content = "";
     },
     async removeComment(index) {
@@ -248,16 +241,10 @@ export default {
     },
     modifyComment(index) {
 
-      console.log(index);
-
       if (
         this.replies[this.focusPage - 1][index].uid == this.user.uid ||
         this.user.tier == "diamond"
       ) {
-
-        console.log(this.replies[this.focusPage - 1][index].commentId);
-        console.log(this.modifyContent);
-
         FirebaseService.modifyComment(
           this.replies[this.focusPage - 1][index].commentId,
           this.modifyContent

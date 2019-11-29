@@ -2,11 +2,11 @@
   <div>
     <v-card flat>
       <div class="page center">
-        <a v-on:click="initiateUserRepo('Taylous', 'zAw5-XwKyMhRkQJuQ4fQ')" class="link mx-3">김창윤</a>
-        <a v-on:click="initiateUserRepo('ryuhojin', 'y4eoDG8jQ29sSs9_mpF2')" class="link mx-3">류호진</a>
-        <a v-on:click="initiateUserRepo('blackmonkey9256', 'HdXsmvT6hBR-mFJyN_YP')" class="link mx-3">이석원</a>
-        <a v-on:click="initiateUserRepo('hyeonjin23', 'kWsKbLKaDydDKBgguZnL')" class="link mx-3">조현진</a>
-        <a v-on:click="initiateUserRepo('Eomazing', 'phLEf4A8LuBfkhsotEwg')" class="link mx-3">엄윤주</a>
+        <a v-on:click="initiateUserRepo(3)" class="link mx-3">김창윤</a>
+        <a v-on:click="initiateUserRepo(0)" class="link mx-3">류호진</a>
+        <a v-on:click="initiateUserRepo(2)" class="link mx-3">이석원</a>
+        <a v-on:click="initiateUserRepo(4)" class="link mx-3">조현진</a>
+        <a v-on:click="initiateUserRepo(1)" class="link mx-3">엄윤주</a>
       </div>
 
       <v-tabs-items v-model="tab">
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import ApexCharts from "apexcharts";
 
 const converter = require("../../services/CurlToNodeJS");
@@ -27,7 +28,6 @@ var chart;
 export default {
   data() {
     return {
-      
       username: "",
       userCommitCount: { type: Map },
       name: "",
@@ -38,6 +38,9 @@ export default {
       tab: null
     };
   },
+  computed: mapState({
+    memberData: state => state.member.memberData
+  }),
   watch: {
     loaded: function(newVal, oldVal) {
       if (newVal && !oldVal) {
@@ -45,14 +48,20 @@ export default {
       }
     }
   },
+  mounted() {
+
+    this.initiateUserRepo(3);
+  },
   methods: {
-    initiateUserRepo(user, tokens) {
+    initiateUserRepo(index) {
 
       if(chart != null)
         chart.destroy();
 
+      let user = this.memberData[index];
+
       this.loaded = false;
-      this.getRepos(user, tokens, true);
+      this.getRepos(user.id, user.token, true);
     },
     getRepos(id, token, isEnd) {
       this.userReposInfo = new Array();
@@ -285,7 +294,6 @@ export default {
         ]
       };
       chart = new ApexCharts(document.querySelector("#chart"), options);
-
       chart.render();
     }
   }
