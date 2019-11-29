@@ -1,6 +1,5 @@
 <template>
   <v-timeline class="notranslate">
-    
     <v-timeline-item v-for="(element, index) in datas" :color="userColor(element.author_name)" :key="index" medium>
       <template v-slot:opposite>
         <span :class="`headline font-weight ${userColor(element.author_name)}--text`" v-text="element.created_at"></span>
@@ -16,6 +15,7 @@
 
 <script>
 const BASE_URL = "https://lab.ssafy.com/api/v4";
+import { mapState } from 'vuex';
 
 export default {
   data() {
@@ -26,10 +26,13 @@ export default {
   created() {
     this.getCommits();
   },
+  computed: mapState({
+    memberData: state => state.member.memberData
+  }),
   methods: {
     getCommits() {
       fetch(
-        `${BASE_URL}/projects/7559/repository/commits?private_token=zAw5-XwKyMhRkQJuQ4fQ&all=true&per_page=100`
+        `${BASE_URL}/projects/7559/repository/commits?private_token=${this.memberData[3].token}&all=true&per_page=100`
       )
         .then(res => {
           return res.json();
@@ -41,11 +44,11 @@ export default {
     },
     userColor(author_name) {
 
-      if(author_name === "Kim ChangYoon")
+      if(author_name === "Kim ChangYoon" || author_name === "김창윤")
         return "blue";
       else if(author_name === "엄윤주" || author_name === "Yoonju Eom")
         return "purple";
-      else if(author_name === "Ryuhojin")
+      else if(author_name === "Ryuhojin" || author_name === "류호진")
         return "pink";
       else if(author_name === "이석원")
         return "green";
@@ -57,7 +60,7 @@ export default {
 };
 </script>
 <style>
-*{
+* {
   font-family: 'Nanum Gothic', sans-serif;
 }
 </style>

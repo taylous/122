@@ -30,6 +30,8 @@
 <script>
 const BASE_URL = "https://lab.ssafy.com/api/v4";
 
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
@@ -38,8 +40,11 @@ export default {
       offsetTop: 0
     };
   },
-  created() {
-    this.getRepositories("Taylous", "J7kwFVv-7zWVHD3_zuU1", "blue");
+  computed: mapState({
+    memberData: state => state.member.memberData
+  }),
+  mounted() {
+    this.getRepositories(this.memberData[3].id, this.memberData[3].token, "blue");
   },
   methods: {
     onScroll(e) {
@@ -55,15 +60,15 @@ export default {
           return res.json();
         })
         .then(data => {
-          console.log(data);
           this.datas = data;
         });
     }
   }
 };
 </script>
+
 <style>
-*{
+* {
   font-family: 'Nanum Gothic', sans-serif;
 }
 </style>

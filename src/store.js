@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import auth from "./store/modules/auth";
-import images from "./store/modules/images";
 import user from './store/modules/user';
+import images from "./store/modules/images";
 import modal from './store/modules/modal';
 import notification from './store/modules/notification';
 import admin from './store/modules/admin';
@@ -21,10 +21,10 @@ export default new Vuex.Store({
     banner: ''
   },
   modules: {
+    user,
     member,
     auth,
     images,
-    user,
     modal,
     notification,
     admin,
