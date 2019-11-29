@@ -1,6 +1,6 @@
 # Team 122
 
-<img src="src\assets\mainlogo.png" width="300" height="300" align="center">
+<img src="src/assets/mainlogo.png" width="300" height="300" align="center">
 
  Vue.js와 Firebase를 이용한 **팀 포트폴리오** 페이지 입니다. 사이트를 개발한 팀원들의 스킬 역량과 Git Commit 내역들을 볼 수 있고, 개발자 이외의 사람들은 자신의 포트폴리오나 글을 올릴 수 있습니다. 관리자 페이지도 구현되어 있으며, 사이트의 회원 가입 수, 접속 수, traffic 등 간단한 Dashboard를 확인할 수 있습니다. 또 회원 등급 조정 하거나 탈퇴 할 수 있습니다.
 
@@ -22,7 +22,7 @@
 
 ## Architecture
 
-<img src="product_specification\architecture.png" width="700" height="300" align="center">
+<img src="product_specification/architecture.png" width="700" height="300" align="center">
 
 ### Front-end
 
