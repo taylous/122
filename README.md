@@ -71,21 +71,15 @@
 
 ## QA
 
-[product_specification\Final Project_QA.xlsx]: 
+product_specification\Final Project_QA.xlsx 에서 확인할 수 있습니다.
 
 
 
 ## References
 
-EXPRESS SERVER : 
+EXPRESS SERVER : https://expressjs.com/ko/starter/generator.html
 
-[https://expressjs.com/ko/starter/generator.html]: 
+Vue.js : https://vuejs.org/
 
-Vue.js : 
-
-[https://vuejs.org/]: 
-
-Vuetify : 
-
-[https://vuetifyjs.com/ko/]: 
+Vuetify : https://vuetifyjs.com/ko/
 
